@@ -7,16 +7,16 @@ This collection includes solutions ranging from basic syntax exercises to advanc
 ## 🧠 Key Concepts & Techniques
 I implemented solutions covering various computer science topics, including:
 
-* Searching & Sorting:
+* **Searching & Sorting:**
     * Binary Search
     * Two Pointers Technique
-* Dynamic Programming (DP):
+* **Dynamic Programming (DP):**
     * Knapsack Problems
     * Longest Common Subsequence (LCS)
-* Greedy Algorithms:
+* **Greedy Algorithms:**
     * Optimization problems
     * Interval Scheduling
-* Data Structures:
+* **Data Structures:**
     * Vectors, Maps, Stacks, Queues
 
 ## 🛠️ Tech Stack
