@@ -1,0 +1,26 @@
+std::lower_bound
+
+Restituisce un iteratore al primo elemento che è MAGGIORE O UGUALE al valore cercato.
+Domanda che pone: "Dove inizia la sequenza di numeri che sono almeno X?"
+
+std::upper_bound
+ 
+Restituisce un iteratore al primo elemento che è STRETTAMENTE MAGGIORE del valore cercato.
+Domanda che pone: "Dove potrei inserire questo numero mantenendo l'ordine, 
+mettendolo DOPO tutti gli uguali?"
+
+Il primo numero maggiore o uguale a X
+lower_bound(..., X) 
+--> indice_utile = it - v.begin()
+
+Il primo numero maggiore a X 
+upper_bound(..., X) 
+--> indice_utile = it - v.begin()
+
+Il primo numero minore o uguale a X
+upper_bound(..., X) 
+--> indice_utile = (it - v.begin()) - 1
+
+Il primo numero minore a X
+lower_bound(..., X) 
+--> indice_utile = (it - v.begin()) - 1

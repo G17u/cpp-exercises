@@ -1,0 +1,34 @@
+// 1. Definisci l'intervallo di ricerca (spazio delle risposte)
+long long low = 0;
+long long high = 2000000000; // Un numero abbastanza grande
+long long ans = -1; // Qui salveremo la risposta migliore
+
+while (low <= high) {
+    long long mid = low + (high - low) / 2; // Calcolo sicuro anti-overflow
+
+    if (check(mid)) {
+        // Trovato un candidato valido!
+        ans = mid; 
+        
+        // ORA DECIDI: Vuoi massimizzare o minimizzare?
+        
+        // A) Se cerchi il MASSIMO (es. problema dei film/subset):
+        // Proviamo a vedere se c'è qualcosa di meglio a destra (più grande)
+        low = mid + 1; 
+        
+        // B) Se cerchi il MINIMO (es. minimo costo):
+        // Proviamo a vedere se c'è qualcosa di meglio a sinistra (più piccolo)
+        // high = mid - 1; 
+    } 
+    else {
+        // mid non va bene.
+        // Se volevamo andare a destra ma mid non va bene, dobbiamo tornare indietro
+        high = mid - 1;
+        
+        // Oppure: low = mid + 1 (dipende dalla logica del problema)
+    }
+}
+// Alla fine, 'ans' contiene la risposta ottimale.
+
+
+check(mid) è la funzione che mi serve per controllare se il valore in mid è valido o no
