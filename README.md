@@ -32,5 +32,7 @@ This repository is organized into folders. Since I use **Visual Studio**, you wi
 3.  Select the project you want to run as the *Startup Project*.
 4.  Build and Run (F5).
 
+
+**PS** All the programs were done in 2025, the year in the folder's names corresponds to the name of a certain exercise
 ---
 *Created by Giovanni Carducci - Passionate about Software Engineering & Algorithms.*
