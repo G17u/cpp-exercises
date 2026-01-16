@@ -1,0 +1,620 @@
+#include <stdio.h>
+#include <string.h>
+#include <random>
+
+void Es1();
+void Es2();
+void Es3();
+void Es4();
+void Es5();
+void Es6();
+void Es7();
+int Es8();
+void Es9();
+void Es10();
+void Es11();
+void Es12();
+int pow(int, int);
+
+int main()
+{
+	Es12();
+	return 0;
+}
+
+
+void Es1() {
+	
+#define DIMES1 10
+
+	int Mat[DIMES1][DIMES1];
+
+	for (int i = 1; i <= DIMES1; i++) {
+		printf("%d|", i);
+		for (int j = 1; j <= DIMES1; j++) {
+			Mat[i-1][j-1] = i * j;
+			int tmp = Mat[i - 1][j - 1];
+			if ((tmp % 7 == 0) && (tmp % 5 == 0)) {
+				printf("%4d*", Mat[i - 1][j - 1]);
+			}
+			else {
+				printf("%4d", Mat[i - 1][j - 1]);
+			}
+			
+		}
+		printf("\n");
+	}
+
+}
+
+void Es2() {
+
+#define DIMVES2 5
+
+	int n = 0;
+	int v[DIMVES2];
+	while (n < DIMVES2) {
+		printf("Il vettore contiene n = %d numeri. Numero per cella %d?", n, n);
+		scanf("%d", &v[n]);
+		if (v[n] == 0) {
+			break;
+		}
+		n++;
+	}
+	if (n == 5) printf("Il vettore contiene n = 5 numeri. Il vettore e' pieno.");
+
+	printf("Vettore con %d elementi: ", n);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", v[i]);
+	}
+	
+}
+
+void Es3() {
+
+#define DIM1ES3 5
+#define DIM2ES3 4
+
+	int V[DIM1ES3], W[DIM2ES3], VW[DIM2ES3], tmp=0;
+
+	printf("Inserire i valori per il primo vettore: ");
+	for (int i = 0; i < DIM1ES3; i++) {
+		scanf("%d", &V[i]);
+	}
+
+	printf("Inserire i valori per il secondo vettore: ");
+	for (int i = 0; i < DIM2ES3; i++) {
+		scanf("%d", &W[i]);
+
+		for (int j = 0; j < DIM1ES3; j++) {
+			if (W[i] == V[j]) {
+				VW[tmp] = W[i];
+				tmp++;
+			}
+		}
+	}
+
+	printf("\nIntersezione: ");
+	for (int i = 0; i < tmp; i++) {
+		printf("%d ", VW[i]);
+	}
+
+}
+
+void Es4() {
+
+#define DIM_M 3
+
+	int Mat[DIM_M][DIM_M];
+
+	for (int i = 0; i < DIM_M; i++) {
+		for (int j = 0; j < DIM_M; j++) {
+			printf("Matrice [%d][%d]? ", i, j);
+			scanf("%d", &Mat[i][j]);
+			Mat[i][j] *= 2;
+		}
+	}
+
+	for (int i = 0; i < DIM_M; i++) {
+		for (int j = 0; j < DIM_M; j++) {
+			printf("%d ", Mat[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+void Es5() {
+
+	char nome[10];
+	int i = 0, len = 0;
+
+	printf("Inserisci il tuo nome: ");
+	scanf("%s", nome);
+
+	while (nome[i] != '\0') {
+		i++;
+		len++;
+	}
+	printf("Il nome e' lungo %d\n", len);
+	printf("La funzione strlen restituisce un valore di %d", strlen(nome));
+}
+
+void Es6() {
+
+#define MAX 10
+
+	srand(time(NULL));
+
+	int n;
+	int V[MAX], W[MAX];
+	int SUM[MAX];
+
+	printf("Inserisci la lunghezza dei vettori tra 1 e 10: ");
+	scanf("%d", &n);
+
+	for (int i = 0; i < n; i++) {
+		V[i] = rand() % 10;
+		W[i] = rand() % 10;
+	}
+
+	for (int i = 0; i < n; i++) {
+		SUM[i] = V[i] + W[n - i - 1];
+	}
+
+	for (int i = 0; i < n; i++) {
+		printf("%d ", V[i]);
+	}
+	printf("\n");
+	for (int i = 0; i < n; i++) {
+		printf("%d ", W[i]);
+	}
+	printf("\n");
+	for (int i = 0; i < n; i++) {
+		printf("%d ", SUM[i]);
+	}
+}
+
+void Es7() {
+
+#define DIMR 3
+
+	int Mat[DIMR][DIMR];
+	int MatS[DIMR * 2][DIMR * 2];
+
+	srand(time(NULL));
+
+	for (int i = 0; i < DIMR; i++) {
+		for (int j = 0; j < DIMR; j++) {
+			Mat[i][j] = rand() % 10;
+		}
+	}
+	
+	printf("La matrice iniziale e': \n");
+	for (int i = 0; i < DIMR; i++) {
+		for (int j = 0; j < DIMR; j++) {
+			printf("%d ", Mat[i][j]);
+		}
+		printf("\n");
+	}
+
+	printf("\n");
+
+	for (int i = 0; i < DIMR*2; i++) {
+		
+		if (i < DIMR) {
+			for (int j = 0; j < DIMR * 2; j++) {
+				if (j < DIMR) {
+					MatS[i][j] = Mat[i][j];
+				}
+				else {
+					MatS[i][j] = Mat[i][DIMR*2 - j - 1];
+				}
+			}
+		}
+		else {
+			for (int j = 0; j < DIMR * 2; j++) {
+				if (j < DIMR) {
+					MatS[i][j] = Mat[DIMR * 2 - i - 1][j];
+				}
+				else {
+					MatS[i][j] = Mat[DIMR * 2 - i - 1][DIMR * 2 - j - 1];
+				}
+			}
+		}
+	}
+
+	printf("La matrice finale e': \n");
+	for (int i = 0; i < DIMR*2; i++) {
+		for (int j = 0; j < DIMR*2; j++) {
+			printf("%d ", MatS[i][j]);
+		}
+		printf("\n");
+	}
+
+}
+
+int Es8() {
+
+	int sudoku[9][9] = {
+{1,2,3,4,5,6,7,8,9},
+{4,5,6,7,8,9,1,2,3},
+{7,8,9,1,2,3,4,5,6},
+{2,3,4,5,6,7,8,9,1},
+{5,6,7,8,9,1,2,3,4},
+{8,9,1,2,3,4,5,6,7},
+{3,4,5,6,7,8,9,1,2},
+{6,7,8,9,1,2,3,4,5},
+{9,1,2,3,4,5,6,7,8}
+	};
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+
+		}
+	}
+
+
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			
+			for (int k = j + 1; k < 9; k++) {
+				if (sudoku[i][j] == sudoku[i][k]) {
+					printf("Soluzione non valida, 260");
+					return 0;
+				}
+			}
+			
+		}
+	}
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+
+			for (int k = j + 1; k < 9; k++) {
+				if (sudoku[j][i] == sudoku[k][i]) {
+					printf("Soluzione non valida, 272");
+					return 0;
+				}
+			}
+
+		}
+	}
+	
+	for (int i = 0; i < 9; i++) {
+		
+		if (i < 3) {
+			for (int j = 0; j < 9; j++) {
+
+				if (j < 3) {
+					
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i!=3-k)&&(j!=3-t)&&(sudoku[i][j] == sudoku[3-k][3-t])) {
+								printf("Soluzione non valida, 290");
+								return 0;
+							}
+						}
+					}
+
+				}
+				else if ((j < 6) && (j >= 3)) {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 3 - k) && (j != 6 - t) && (sudoku[i][j] == sudoku[3 - k][6 - t])) {
+								printf("Soluzione non valida, 301, %d, k%d t%d", sudoku[i][j], k, t);
+								return 0;
+							}
+						}
+					}
+				}
+				else {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 3 - k) && (j != 9 - t) && (sudoku[i][j] == sudoku[3 - k][9 - t])) {
+								printf("Soluzione non valida, 311");
+								return 0;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		else if ((i < 6) && (i >= 3)) {
+			for (int j = 0; j < 9; j++) {
+
+				if (j < 3) {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 6 - k) && (j != 3 - t) && (sudoku[i][j] == sudoku[6 - k][3 - t])) {
+								printf("Soluzione non valida, 327");
+								return 0;
+							}
+						}
+					}
+				}
+				else if ((j < 6) && (j >= 3)) {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 6 - k) && (j != 6 - t) && (sudoku[i][j] == sudoku[6 - k][6 - t])) {
+								printf("Soluzione non valida, 337");
+								return 0;
+							}
+						}
+					}
+				}
+				else {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 6 - k) && (j != 9 - t) && (sudoku[i][j] == sudoku[6 - k][9 - t])) {
+								printf("Soluzione non valida, 347");
+								return 0;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		else {
+			for (int j = 0; j < 9; j++) {
+
+				if (j < 3) {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 9 - k) && (j != 3 - t) && (sudoku[i][j] == sudoku[9 - k][3 - t])) {
+								printf("Soluzione non valida, 363");
+								return 0;
+							}
+						}
+					}
+				}
+				else if ((j < 6) && (j >= 3)) {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 9 - k) && (j != 6 - t) && (sudoku[i][j] == sudoku[9 - k][6 - t])) {
+								printf("Soluzione non valida, 373");
+								return 0;
+							}
+						}
+					}
+				}
+				else {
+					for (int k = 1; k <= 3; k++) {
+						for (int t = 1; t <= 3; t++) {
+							if ((i != 9 - k) && (j != 9 - t) && (sudoku[i][j] == sudoku[9 - k][9 - t])) {
+								printf("Soluzione non valida, 383");
+								return 0;
+							}
+						}
+					}
+				}
+
+			}
+		}
+		
+		
+	}
+
+	printf("Soluzione valida");
+	return 0;
+}
+
+void Es9() {
+
+#define NAMELEN 20
+#define NANAGR 5	
+	
+	typedef struct {
+		char nome[NAMELEN];
+		char genere;
+		int eta;
+	}s_anagr;
+
+	s_anagr v_anagr[NANAGR] = {
+		{"Topolino", 'M', 47},
+		{"Minni", 'F', 37},
+		{"Pluto", 'M', 17},
+		{"Clarabella", 'F', 27},
+		{"Pippo", 'M', 26}
+	};
+
+	s_anagr v_finale[NANAGR + 1];
+
+	int counter = 0;
+	s_anagr temp = {"N/A", 'M', -1};
+
+	for (int i = 0; i < NANAGR; i++) {
+		if (v_anagr[i].genere == 'M') {
+			if (counter == 0){
+				temp = v_anagr[i];
+				counter++;
+			}else {
+				if (v_anagr[i].eta < temp.eta) temp = v_anagr[i];
+			}
+			
+		}
+	}
+	v_finale[0] = temp;
+	
+	counter = 0;
+	temp = { "N/A", 'F', -1 };
+
+	for (int i = 0; i < NANAGR; i++) {
+		if (v_anagr[i].genere == 'F') {
+			if (counter == 0) {
+				temp = v_anagr[i];
+				counter++;
+			}
+			else {
+				if (v_anagr[i].eta < temp.eta) temp = v_anagr[i];
+			}
+		}
+	}
+	v_finale[1] = temp;
+
+	counter = 2;
+
+	for (int i = 0; i < NANAGR; i++) {
+		if (v_anagr[i].genere == 'M') {
+			if (v_anagr[i].eta > 25) {
+				v_finale[counter] = v_anagr[i];
+				counter++;
+			}
+		}
+	}
+
+	printf("Il vettore finale e':\n");
+	for (int i = 0; i < counter; i++) {
+		printf("Elemento %d: %s, %c, %d\n", i + 1, v_finale[i].nome, v_finale[i].genere, v_finale[i].eta);
+	}
+
+}
+
+void Es10() {
+
+#define NMAX 100
+
+	int V[NMAX], F[10] = {0,0,0,0,0,0,0,0,0,0};
+	srand(time(NULL));
+
+	for (int i = 0; i < NMAX; i++) {
+		V[i] = rand() % 100;
+
+		if (V[i] < 10) F[0]++;
+		else if (V[i] >= 10 && V[i] < 20) F[1]++;
+		else if (V[i] >= 20 && V[i] < 30) F[2]++;
+		else if (V[i] >= 30 && V[i] < 40) F[3]++;
+		else if (V[i] >= 40 && V[i] < 50) F[4]++;
+		else if (V[i] >= 50 && V[i] < 60) F[5]++;
+		else if (V[i] >= 60 && V[i] < 70) F[6]++;
+		else if (V[i] >= 70 && V[i] < 80) F[7]++;
+		else if (V[i] >= 80 && V[i] < 90) F[8]++;
+		else if (V[i] >= 90 && V[i] < 100) F[9]++;
+
+	}
+
+	for (int i = 0; i < 10; i++) {
+		printf("Numeri compresi tra %d e %d: %d\n", i * 10, (i + 1) * 10 - 1, F[i]);
+	}
+}
+
+void Es11() {
+
+	int num, pot = 10, j = 0, tmp = 0, pInt;
+
+	printf("Inserisci un numero intero maggiore o uguale a 0: ");
+	scanf("%d", &num);
+
+	while (tmp <= num) {
+		
+		tmp = pow(pot, j);
+		j++;
+	}
+
+	tmp = pow(pot, j - 2);
+
+	for (int i = 1; i < j; i++) {
+		
+		pInt = (int) num / tmp;
+
+		num = num % tmp;
+		tmp = pow(pot, j - i - 2);
+		
+		switch (pInt) {
+		case 0:
+			printf("zero ");
+			break;
+		case 1:
+			printf("uno ");
+			break;
+		case 2:
+			printf("due ");
+			break;
+		case 3:
+			printf("tre ");
+			break;
+		case 4:
+			printf("quattro ");
+			break;
+		case 5:
+			printf("cinque ");
+			break;
+		case 6:
+			printf("sei ");
+			break;
+		case 7:
+			printf("sette ");
+			break;
+		case 8:
+			printf("otto ");
+			break;
+		case 9:
+			printf("nove ");
+			break;
+		}
+	}
+	
+
+}
+int pow(int base, int esponente) {
+	int res = 1;
+
+	if (esponente == 0) res = 1;
+	else if (esponente > 0) {
+		for (int i = 0; i < esponente; i++) {
+			res *= base;
+		}
+	}
+	else {
+		return -1;
+	}
+	return res;
+}
+
+void Es12() {
+
+#define LEN_CHAR 50
+#define T_STEP_S 1
+
+	float v0_ms, a_ms2, s_tot_m;
+	float v_ms = 0, t_s = 0, s_m = 0;
+	int tmp;
+	
+	char grafico[LEN_CHAR];
+		for (int i = 0; i < LEN_CHAR; i++) grafico[i] = '-';
+
+	printf("Inserire i valori iniziali di v0_ms, a_ms, s_tot_m: ");
+	scanf("%f", &v0_ms);
+	scanf("%f", &a_ms2);
+	scanf("%f", &s_tot_m);
+
+	printf("INIZIO SIMULAZIONE v0_ms=%g  a_ms2=%g  s_tot_m=%g  step_s=%d\n", v0_ms, a_ms2, s_tot_m, T_STEP_S);
+
+	while (s_m < s_tot_m) {
+		v_ms = v0_ms + a_ms2 * t_s;
+		s_m = (1.0 / 2.0) * a_ms2 * (t_s * t_s) + v0_ms * t_s;
+		
+		tmp = LEN_CHAR * (s_m / s_tot_m);
+		if (s_m >= s_tot_m) {
+			for (int i = 0; i < LEN_CHAR; i++) grafico[i] = '-';
+		}
+		else {
+			grafico[tmp] = 'X';
+		}
+
+		printf("Tempo = %g s  Velocita' = %g m/s = %g km/h  Distanza = %g m = %g km\n", t_s, v_ms, v_ms*3.6, s_m, s_m/1000);
+		printf("0  ");
+		for (int i = 0; i < LEN_CHAR; i++) {
+			printf("%c", grafico[i]);
+		}
+		printf("  100m\n");
+		
+		if (s_m < s_tot_m) {
+			t_s += T_STEP_S;
+			grafico[tmp] = '-';
+		}
+
+	}
+
+	printf("\nFINE SIMULAZIONE");
+
+}
