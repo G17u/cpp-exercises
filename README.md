@@ -33,6 +33,6 @@ This repository is organized into folders. Since I use **Visual Studio**, you wi
 4.  Build and Run (F5).
 
 
-#### p.s. all the programs were done in 2025, the year in the folder's names corresponds to the name of a certain exercise
+#### p.s. all the programs were done in 2025 and 2026, the year in the folders' names corresponds to the name of a certain exercise
 ---
 *Created by Giovanni Carducci - Passionate about Software Engineering & Algorithms.*
