@@ -2,7 +2,9 @@
 
 Welcome to my training repository! Here I document my journey in mastering C++ and solving complex algorithmic problems.
 
-This collection includes solutions ranging from basic syntax exercises to advanced competitive programming challenges, with a focus on code efficiency and optimization.
+This collection includes solutions ranging from basic syntax exercises to more complex competitive programming challenges, with a focus on code efficiency and optimization. 
+In almost every folder you can find the problem statement for that precise exercise. (I might have forgotten a few) 
+The "C programming" folder contains the code I used to practice C, specifically focusing on linked lists.
 
 ## 🧠 Key Concepts & Techniques
 I implemented solutions covering various computer science topics, including:
