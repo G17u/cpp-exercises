@@ -2,7 +2,9 @@
 
 Welcome to my training repository! Here I document my journey in mastering C++ and solving complex algorithmic problems.
 
-This collection includes solutions ranging from basic syntax exercises to advanced competitive programming challenges, with a focus on code efficiency and optimization.
+This collection includes solutions ranging from basic syntax exercises to more complex competitive programming challenges, with a focus on code efficiency and optimization. 
+In almost every folder you can find the problem statement for that precise exercise. (I might have forgotten a few) 
+The "C programming" folder contains the code I used to practice C, specifically focusing on linked lists.
 
 ## 🧠 Key Concepts & Techniques
 I implemented solutions covering various computer science topics, including:
@@ -33,6 +35,6 @@ This repository is organized into folders. Since I use **Visual Studio**, you wi
 4.  Build and Run (F5).
 
 
-#### p.s. all the programs were done in 2025, the year in the folder's names corresponds to the name of a certain exercise
+#### p.s. all the programs were done in 2025 and 2026, the year in the folders' names corresponds to the name of a certain exercise
 ---
 *Created by Giovanni Carducci - Passionate about Software Engineering & Algorithms.*
